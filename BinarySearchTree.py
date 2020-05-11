@@ -1,8 +1,6 @@
 from LinkedQueue import LinkedQueue
 
-# Binary Tree Making
-
-class BinaryTree:
+class BinarySearchTree:
     class _Node:
         __slots__ = "_element", "_left", "_right"
 
@@ -15,12 +13,38 @@ class BinaryTree:
         self._root = None
         self._size = 0
 
-    def maketree(self, e, left, right):
-        self._root = self._Node(e, left._root, right._root)
-        left._root = None
-        right._root = None
+    def __len__(self):
+        return self._size
+    def is_empty(self):
+        return self._size == 0
 
-# Traverse Methods to read Binary Tree
+    def insert(self, e):
+        troot = self._root
+        ttroot = None
+        while troot:
+            ttroot = troot
+            if e < troot._element:
+                troot = troot._left
+            elif e > troot._element:
+                troot = troot._right
+        node = self._Node(e)
+        if self._root:
+            if e < ttroot._element:
+                ttroot._left = node
+            else:
+                ttroot._right = node
+
+    def search(self, k):
+        troot = self._root
+        while troot:
+            if k < troot._element:
+                troot = troot._left
+            elif k > troot._element:
+                troot = troot._right
+            else:
+                return True
+        return False
+
     def levelorder(self):
         Q = LinkedQueue()
         t = self._root
@@ -55,28 +79,4 @@ class BinaryTree:
             self.postorder(troot._right)
             print(troot._element, end="--")
 
-
-a = BinaryTree()
-x = BinaryTree()
-y = BinaryTree()
-z = BinaryTree()
-r = BinaryTree()
-s = BinaryTree()
-t = BinaryTree()
-
-x.maketree(40, a, a)
-y.maketree(60, a, a)
-z.maketree(20, x, a)
-r.maketree(60,a,y)
-s.maketree(30,r,a)
-t.maketree(10, z, s)
-
-t.levelorder()
-print()
-t.preorder(t._root)
-print()
-t.inorder(t._root)
-print()
-t.postorder(t._root)
-print()
-# end of the code
+bst = BinarySearchTree()
