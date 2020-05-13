@@ -10,6 +10,7 @@ c = conn.cursor()
 #c.execute("CREATE TABLE IF NOT EXISTS iceCubeMelting(time INT,"+
           # "temperature REAL, date TEXT)")
 
+# f = open("PATH", "r")
 c.execute("SELECT time FROM iceCubeMelting")
 # conn.commit()
 c.close()
