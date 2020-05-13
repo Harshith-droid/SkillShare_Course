@@ -35,6 +35,17 @@ class BinarySearchTree:
                 ttroot._right = node
         else:
             self._root = node
+
+    def recurinsert(self, troot, e):
+        if troot == None:
+            node = self._Node(e)
+            return node
+        if e < troot._element:
+            troot._left = self.recurinsert(troot._left, e)
+        elif e > troot._element:
+            troot._right = self.recurinsert(troot._right, e)
+        return troot
+
     def search(self, k):
         troot = self._root
         while troot:
@@ -81,13 +92,18 @@ class BinarySearchTree:
             print(troot._element, end="--")
 
 bst = BinarySearchTree()
-bst.insert(70)
-bst.insert(30)
-bst.insert(90)
-bst.insert(40)
-bst.insert(50)
-bst.insert(110)
+bst._root = bst.recurinsert(None, 305)
+j=10
+while j<1000:
+    bst.recurinsert(bst._root,j)
+    j+=10
+#
+# bst.recurinsert(bst._root, 40)
+# bst.recurinsert(bst._root, 50)
+# bst.recurinsert(bst._root, 110)
 bst.inorder(bst._root)
 print()
+bst.postorder(bst._root)
+print()
 
-print(bst.search(45))
+print(bst.search(455))
