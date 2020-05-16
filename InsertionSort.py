@@ -9,7 +9,8 @@ def insertionsort(A):
 
         A[position] = value
 
-A = [21, 15, 47, 96, 84]
+
+A = [21, 15, 47, 96, 84, 33, 21, 77]
 print("Original Array: ", A)
 insertionsort(A)
 print("Sorted Array: ", A)
