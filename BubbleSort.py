@@ -5,6 +5,7 @@ def bubblesort(A):
             if A[j] > A[j+1]:
                 A[j], A[j+1] = A[j+1], A[j]
 
+
 List = [84, 21, 96, 15, 47]
 print("Original Array: ", List)
 bubblesort(List)
