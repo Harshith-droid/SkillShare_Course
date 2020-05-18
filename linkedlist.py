@@ -21,7 +21,7 @@ class LinkedList:
         return self._size == 0
 
     def add_first(self,e):
-        newest = self._Node(e,None)
+        newest = self._Node(e, None)
         if self.is_empty():
             self._head = newest
             self._tail = newest
