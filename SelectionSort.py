@@ -8,7 +8,7 @@ def selectionsort(numberlist):
         numberlist[i] = numberlist[max_position]
         numberlist[max_position] = temp
 
-List = [21, 15, 47, 96, 84,33,21,77]
+List = [84, 21, 96, 15, 21, 33, 47]
 print("Original Array: ", List)
 selectionsort(List)
 print("Sorted Array: ", List)
