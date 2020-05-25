@@ -1,5 +1,6 @@
 from exceptions import Empty
 
+
 class DoublyLinkedList:
     class _Node:
         __slots__ = "_element", "_prev", "_next"
@@ -72,7 +73,7 @@ class DoublyLinkedList:
         if self.is_empty():
             raise Empty("List is Empty")
         value = self._tail._element
-        print("Value=",value)
+        print("Value=", value)
         self._tail = self._tail._prev
         print(self._tail._element)
         # self._tail._next = None
